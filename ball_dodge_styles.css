@@ -1,0 +1,16 @@
+#game {
+	height: 600px;
+	width: 600px;
+	background-color: gray;
+	margin: auto;
+}
+
+#circle {
+	position: relative;
+	left: 0;
+	top: 0;
+	background-color: red;
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;	
+};
