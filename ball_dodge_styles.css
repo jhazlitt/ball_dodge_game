@@ -1,16 +1,78 @@
+body {
+	background-color: #E0CEED;
+}
+
+#game_header {
+	height: 50px;
+	width: 500px;
+	background-color: #666666;
+	margin: auto;
+	font-size: 30px;
+	font-family: Arial;
+}
+
+#timer {
+	font-family: Arial;
+	font-size: 50px;
+	text-align: right;
+	color: red;	
+	display: inline-block;
+}
+
 #game {
-	height: 600px;
-	width: 600px;
-	background-color: gray;
+	height: 500px;
+	width: 500px;
+	background-color: #B27FE6;
 	margin: auto;
 }
 
 #circle {
 	position: relative;
-	left: 0;
-	top: 0;
-	background-color: red;
+	left: 200px;
+	top: 200px;
+	background-color: #0097FF;
 	height: 100px;
 	width: 100px;
 	border-radius: 50px;	
-};
+}
+
+/* Enemies */
+#enemy1 {
+	position: relative;
+	left: 0px;
+	top: -100px;
+	background-color: black; 
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;	
+}
+
+#enemy2 {
+	position: relative;
+	left: 0px;
+	top: 200px;
+	background-color: black; 
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;	
+}
+
+#enemy3 {
+	position: relative;
+	left: 400px;
+	top: -300px;
+	background-color: black; 
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;	
+}
+
+#enemy4 {
+	position: relative;
+	left: 400px;
+	top: 0px;
+	background-color: black; 
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;	
+}
