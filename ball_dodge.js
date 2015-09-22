@@ -3,82 +3,114 @@ $(document).ready(function() {
 	var top = 200;
 	$('#circle').html(left + "," + top);
 
-	// Check for any arrow keys pressed and move the circle
-	$(document).keydown(function(key) {
-		switch(parseInt(key.which,10)) {
-			// Left arrow key pressed
-			case 37:
-				if (left >= 100){
-					$('#circle').animate({left: "-=100px"}, 'fast');				
-					left -= 100;
-					$('#circle').html(left + "," + top);
-				}
-				break;
-			// Up arrow pressed
-			case 38:
-				if (top >= 100) {
-					$('#circle').animate({top: "-=100px"}, 'fast');				
-					top -= 100;
-					$('#circle').html(left + "," + top);
-				}
-				break;
-			// Right arrow pressed
-			case 39:
-				if (left <= 300) {
-					$('#circle').animate({left: "+=100px"}, 'fast');				
-					left += 100;
-					$('#circle').html(left + "," + top);
-				}
-				break;
-			// Down arrow pressed 
-			case 40:
-				if (top <= 300) {
-					$('#circle').animate({top: "+=100px"}, 'fast');				
-					top += 100;
-					$('#circle').html(left + "," + top);
-				}
-				break;
-		}
-	});
+	$('#title_window').click(playGame);
+	function playGame() {
+		$('#title_window').hide();
+		$('#game').append('<div id="circle"></div>');
+		$('#game').append('<div id="enemy1"></div>');
+		$('#game').append('<div id="enemy2"></div>');
+		$('#game').append('<div id="enemy3"></div>');
+		$('#game').append('<div id="enemy4"></div>');
+		// score will increase by one for each second over the start time
 
-	// score will increase by one for each second over the start time
-	var start = new Date;
-	var score = 0;
+		$(document).keydown(function(key) {
+			switch(parseInt(key.which,10)) {
+				// Left arrow key pressed
+				case 37:
+					if (left >= 100){
+						$('#circle').animate({left: "-=100px"}, 'fast');				
+						left -= 100;
+						$('#circle').html(left + "," + top);
+					}
+					break;
+				// Up arrow pressed
+				case 38:
+					if (top >= 100) {
+						$('#circle').animate({top: "-=100px"}, 'fast');				
+						top -= 100;
+						$('#circle').html(left + "," + top);
+					}
+					break;
+				// Right arrow pressed
+				case 39:
+					if (left <= 300) {
+						$('#circle').animate({left: "+=100px"}, 'fast');				
+						left += 100;
+						$('#circle').html(left + "," + top);
+					}
+					break;
+				// Down arrow pressed 
+				case 40:
+					if (top <= 300) {
+						$('#circle').animate({top: "+=100px"}, 'fast');				
+						top += 100;
+						$('#circle').html(left + "," + top);
+					}
+					break;
+			}
+		});
 
-	var enemy1 = {
-		name: "enemy1",
-		left: 0,
-		top: 0
-	};
-	
-	var enemy2 = {
-		name: "enemy2",
-		left: 0,
-		top: 400		
-	};
 
-	var enemy3 = {
-		name: "enemy3",
-		left: 400,
-		top: 0
-	};
 
-	var enemy4 = {
-		name: "enemy4",
-		left: 400,
-		top: 400
-	};
 
-	setInterval(function() {
-		$('#timer').text("Score: " + score);
-		score = Math.round((new Date- start) / 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		var start = new Date;
+		var score = 0;
+
+		var enemy1 = {
+			name: "enemy1",
+			left: 0,
+			top: 0
+		};
 		
-		enemyMove(enemy1);
-		enemyMove(enemy2);
-		enemyMove(enemy3);
-		enemyMove(enemy4);
-	}, 1000);
-	
+		var enemy2 = {
+			name: "enemy2",
+			left: 0,
+			top: 400		
+		};
+
+		var enemy3 = {
+			name: "enemy3",
+			left: 400,
+			top: 0
+		};
+
+		var enemy4 = {
+			name: "enemy4",
+			left: 400,
+			top: 400
+		};
+
+		setInterval(function() {
+			$('#timer').text("Score: " + score);
+			score = Math.round((new Date- start) / 1000);
+			
+			enemyMove(enemy1);
+			enemyMove(enemy2);
+			enemyMove(enemy3);
+			enemyMove(enemy4);
+		}, 1000);
+	}
+
 	function enemyMove(enemy) {
 		// possibleDirections says where the enemy is allowed to move.  direction indicates which way the enemy will actually go
 		var possibleDirections = [];
@@ -138,4 +170,6 @@ $(document).ready(function() {
 			enemy.left -= 100;
 		}
 	}
+
+
 });

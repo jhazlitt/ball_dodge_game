@@ -19,11 +19,20 @@ body {
 	display: inline-block;
 }
 
+#title_window {
+	background-color: white;
+	width: 400px;
+	height: 300px;
+	z-index: 1;
+	display: inline-block;
+}	
+
 #game {
 	height: 500px;
 	width: 500px;
 	background-color: #B27FE6;
 	margin: auto;
+	text-align: center;
 }
 
 #circle {
