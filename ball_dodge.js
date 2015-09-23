@@ -175,9 +175,13 @@ $(document).ready(function() {
 		$('#enemy3').hide();
 		$('#enemy4').hide();
 
-		$('#game').append('<div id="end_window"><h1>Game Over!</h1><h2>Your score: ' + score + '</h2><h2>Please refresh the page to play again.</h2></div>');
+		$('#game').append('<div id="end_window"><h1>Game Over!</h1><h2>Your score: ' + score + '</h2>');
 		// Set left and top to arbitrary numbers so that the gameOver function ceases to be called
 		left = 123;
 		top = 123;
+
+		$('#end_window').click(function() {
+			location.reload();
+		});
 	}
 });
